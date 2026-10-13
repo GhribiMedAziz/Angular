@@ -1,0 +1,35 @@
+<div class="admin-wrapper">
+  <div class="admin-header">
+    <h2>🛠️ Espace Administration (Module Lazy-Loaded)</h2>
+    <p>Ce module illustre le chargement à la demande (loadChildren) et les routes enfants (Child Routes).</p>
+  </div>
+
+  <nav class="admin-nav">
+    <a
+      routerLink="dashboard"
+      routerLinkActive="active-tab"
+      class="tab-link"
+    >
+      📊 Dashboard
+    </a>
+    <a
+      routerLink="users"
+      routerLinkActive="active-tab"
+      class="tab-link"
+    >
+      👥 Utilisateurs
+    </a>
+    <a
+      routerLink="stats"
+      routerLinkActive="active-tab"
+      class="tab-link"
+    >
+      📈 Statistiques
+    </a>
+  </nav>
+
+  <div class="admin-content">
+    <!-- PROSIT 4 : RouterOutlet enfant pour afficher les Child Routes du module admin -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="profile-container">
+  <div class="profile-card">
+    <div class="avatar-section">
+      <div class="avatar">👤</div>
+      <div>
+        <h2>{{ user().nom }}</h2>
+        <p class="role">{{ user().role }}</p>
+        <p class="email">📧 {{ user().email }}</p>
+      </div>
+    </div>
+
+    <hr />
+
+    <h3>Mes Conférences Enregistrées</h3>
+    <div class="registered-list">
+      @for (conf of user().conferancesInscrites; track conf.id) {
+        <div class="conf-item">
+          <div>
+            <strong>{{ conf.name }}</strong>
+            <p>📅 {{ conf.date }}</p>
+          </div>
+          <span class="status-badge">Inscrit</span>
+        </div>
+      }
+    </div>
+  </div>
+</div>

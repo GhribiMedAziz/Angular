@@ -1,0 +1,35 @@
+<div class="details-container">
+  @if (conference(); as conf) {
+    <div class="details-card">
+      <img [src]="conf.imageUrl" [alt]="conf.name" class="cover-image" />
+
+      <div class="details-body">
+        <span class="badge">Identifiant de route : #{{ id() }}</span>
+        <h1>{{ conf.name }}</h1>
+        <p class="description">{{ conf.description }}</p>
+
+        <div class="meta-info">
+          <div><strong>📅 Date :</strong> {{ conf.date }}</div>
+          <div><strong>📍 Lieu :</strong> {{ conf.place }}</div>
+          <div><strong>💰 Tarif :</strong> {{ conf.price }} TND</div>
+        </div>
+
+        <div class="actions">
+          <!-- Navigation programmée (Prosit 3) -->
+          <button (click)="inscrire()" class="btn-primary">
+            S'inscrire à cette conférence (Navigation programmée)
+          </button>
+          <button (click)="retour()" class="btn-secondary">
+            Retour à la liste
+          </button>
+        </div>
+      </div>
+    </div>
+  } @else {
+    <div class="not-found-box">
+      <h2>Conférence introuvable</h2>
+      <p>Aucune conférence trouvée avec l'identifiant {{ id() }}.</p>
+      <button (click)="retour()" class="btn-secondary">Retour à la liste</button>
+    </div>
+  }
+</div>

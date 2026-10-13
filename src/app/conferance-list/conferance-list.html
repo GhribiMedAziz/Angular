@@ -1,0 +1,21 @@
+<h1>Toutes les Conférences</h1>
+
+<div class="cards-container">
+  @for (conf of conferances(); track conf.id) {
+    <div class="card">
+      <img
+        [src]="conf.imageUrl"
+        [alt]="conf.name"
+      />
+
+      <div class="card-content">
+        <h2>{{ conf.name }}</h2>
+        <p>📅 {{ conf.date }}</p>
+        <p>📍 {{ conf.place }}</p>
+        <p>💰 {{ conf.price }} TND</p>
+      </div>
+
+      <button [routerLink]="['/conferences', conf.id]">Voir les Détails</button>
+    </div>
+  }
+</div>

@@ -1,0 +1,64 @@
+<div class="inscription-container">
+  <div class="inscription-card">
+    <h2>Inscription à un événement</h2>
+    <p class="subtitle">Remplissez les informations ci-dessous pour confirmer votre participation.</p>
+
+    @if (currentConference(); as conf) {
+      <div class="event-reminder">
+        <p>Événement sélectionné : <strong>{{ conf.name }}</strong> ({{ conf.place }} - {{ conf.date }})</p>
+      </div>
+    }
+
+    <form (ngSubmit)="validerInscription()">
+      <div class="form-group">
+        <label for="name">Nom complet :</label>
+        <input
+          id="name"
+          type="text"
+          placeholder="Ex: Mohamed Ben Salah"
+          [ngModel]="participantName()"
+          (ngModelChange)="participantName.set($event)"
+          name="name"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Adresse Email :</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="Ex: participant@esprit.tn"
+          [ngModel]="participantEmail()"
+          (ngModelChange)="participantEmail.set($event)"
+          name="email"
+          required
+        />
+      </div>
+
+      @if (!id()) {
+        <div class="form-group">
+          <label for="conf">Choisir une conférence :</label>
+          <select
+            id="conf"
+            [ngModel]="selectedConfId()"
+            (ngModelChange)="selectedConfId.set($event)"
+            name="conf"
+          >
+            <option [ngValue]="null">-- Sélectionner une conférence --</option>
+            @for (c of allConferences(); track c.id) {
+              <option [ngValue]="c.id">{{ c.name }} ({{ c.place }})</option>
+            }
+          </select>
+        </div>
+      }
+
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">
+          Confirmer l'inscription &gt; Redirection automatique
+        </button>
+        <a routerLink="/conferences" class="btn-cancel">Annuler</a>
+      </div>
+    </form>
+  </div>
+</div>

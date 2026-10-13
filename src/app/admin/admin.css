@@ -1,0 +1,53 @@
+.admin-wrapper {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.admin-header {
+  margin-bottom: 25px;
+}
+
+.admin-header h2 {
+  margin: 0 0 8px;
+  color: #1e293b;
+}
+
+.admin-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.admin-nav {
+  display: flex;
+  gap: 10px;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 25px;
+}
+
+.tab-link {
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #64748b;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  margin-bottom: -2px;
+}
+
+.tab-link:hover {
+  color: #6366f1;
+}
+
+.tab-link.active-tab {
+  color: #6366f1;
+  border-bottom-color: #6366f1;
+  background-color: #f5f3ff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.admin-content {
+  margin-top: 20px;
+}

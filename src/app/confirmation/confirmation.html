@@ -1,0 +1,25 @@
+<div class="confirmation-container">
+  <div class="confirmation-card">
+    <div class="success-icon">✅</div>
+    <h1>Inscription Confirmée !</h1>
+    <p class="subtitle">
+      Félicitations <strong>{{ nom() }}</strong>, votre place pour <strong>{{ conference() }}</strong> est bien réservée.
+    </p>
+
+    @if (email()) {
+      <div class="email-notice">
+        Un email de confirmation contenant votre badge d'accès a été envoyé à <strong>{{ email() }}</strong>.
+      </div>
+    }
+
+    <div class="actions">
+      <!-- Démonstration navigation programmée et routerLink -->
+      <button (click)="retourAccueil()" class="btn-primary">
+        Voir toutes les conférences (Navigation programmée)
+      </button>
+      <a routerLink="/home" class="btn-outline">
+        Retour à l'accueil
+      </a>
+    </div>
+  </div>
+</div>

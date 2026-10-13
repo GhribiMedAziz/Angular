@@ -1,0 +1,53 @@
+<header class="navbar">
+  <div class="brand">
+    <span class="logo-icon">🚀</span>
+    <span class="brand-name">ConfApp</span>
+  </div>
+
+  <nav class="nav-links">
+    <!-- PROSIT 2 : routerLink et routerLinkActive pour marquer visuellement la page active -->
+    <a
+      routerLink="/home"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Accueil
+    </a>
+
+    <a
+      routerLink="/conferences"
+      routerLinkActive="active"
+    >
+      Conférences
+    </a>
+
+    <a
+      routerLink="/inscription"
+      routerLinkActive="active"
+    >
+      Inscription
+    </a>
+
+    <a
+      routerLink="/contact"
+      routerLinkActive="active"
+    >
+      Contact
+    </a>
+
+    <a
+      routerLink="/profile"
+      routerLinkActive="active"
+    >
+      Mon Profil
+    </a>
+
+    <a
+      routerLink="/admin"
+      routerLinkActive="active"
+      class="admin-link"
+    >
+      ⚙️ Admin
+    </a>
+  </nav>
+</header>

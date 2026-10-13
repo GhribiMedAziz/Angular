@@ -1,0 +1,64 @@
+<div class="home-wrapper">
+  <!-- Section Présentation Plateforme (Prosits 1 à 4) -->
+  <div class="hero-banner">
+    <h1>Bienvenue sur la Plateforme des Conférences</h1>
+    <p class="hero-subtitle">
+      Application Angular 21 mettant en œuvre le Routage Avancé, la Navigation Programmée, les Signals et le Lazy Loading.
+    </p>
+    <div class="hero-actions">
+      <a routerLink="/conferences" class="btn-hero-primary">Explorer les Conférences</a>
+      <a routerLink="/inscription" class="btn-hero-secondary">S'inscrire à un événement</a>
+    </div>
+  </div>
+
+  <!-- Travaux pratiques de base conservés -->
+  <div class="practice-card">
+    <h3>Exercices Séance 5 (Directives, Contrôle de flux & Signaux)</h3>
+    <div class="user-greeting">
+      <img [src]="imgurl" alt="Angular Logo" width="80" height="80" />
+      <div>
+        <p><strong>Bienvenue, {{ nom }} !</strong></p>
+        <button (click)="bonjour()" class="btn-small">Dire bonjour</button>
+      </div>
+    </div>
+
+    <div class="interactive-section">
+      <label>Nom dynamique :</label>
+      <input [(ngModel)]="nom1" class="input-text" />
+      <p>Bonjour {{ nom1 }} !</p>
+
+      @if (nom1 === "amen") {
+        <p class="alert-info">Vous êtes aziz !</p>
+      } @else {
+        <p class="alert-warning">Vous n'êtes pas aziz !</p>
+      }
+    </div>
+
+    <div class="lists-section">
+      <h4>Liste des étudiants :</h4>
+      <div class="tags">
+        @for (s of students; track $index) {
+          <span class="tag">{{ s }}</span>
+        }
+      </div>
+
+      <h4>Étudiants & Âges :</h4>
+      <ul>
+        @for (s2 of students2; track $index) {
+          <li>{{ s2.name }} ({{ s2.age }} ans)</li>
+        }
+      </ul>
+    </div>
+
+    <div class="counters-grid">
+      <div class="counter-box">
+        <p>Compteur simple : <strong>{{ count }}</strong></p>
+        <button (click)="incrementSimple()" class="btn-small">Incrémenter simple</button>
+      </div>
+      <div class="counter-box">
+        <p>Compteur Signal : <strong>{{ counts() }}</strong></p>
+        <button (click)="increment()" class="btn-small">Incrémenter Signal</button>
+      </div>
+    </div>
+  </div>
+</div>
