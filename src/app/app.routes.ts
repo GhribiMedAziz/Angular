@@ -58,6 +58,11 @@ export const routes: Routes = [
     loadChildren: () => import('./admin/admin.routes').then(m => m.ADMIN_ROUTES)
   },
 
+  {
+    path: 'login',
+    loadComponent: () => import('./user-form/user-form').then(m => m.UserForm)
+  },
+
   // PROSIT 2 : Route wildcard pour gérer les URL inexistantes (Erreur 404)
   {
     path: '**',

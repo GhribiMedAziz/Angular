@@ -1,0 +1,21 @@
+<form [formGroup]="userForm" (ngSubmit)="submitForm()">
+  <label for="username">Nom d'utilisateur :</label>
+  <input id="username" type="text" formControlName="username">
+  @if (userForm.controls.username.invalid && userForm.controls.username.touched) {
+    <div class="error">Le nom d'utilisateur est requis et doit contenir au moins 3 caractères.</div>
+  }
+
+  <label for="email">Email :</label>
+  <input id="email" type="email" formControlName="email">
+  @if (userForm.controls.email.invalid && userForm.controls.email.touched) {
+    <div class="error">L'adresse email est requise et doit être valide.</div>
+  }
+
+  <label for="password">Mot de passe :</label>
+  <input id="password" type="password" formControlName="password">
+  @if (userForm.controls.password.invalid && userForm.controls.password.touched) {
+    <div class="error">Le mot de passe est requis et doit contenir au moins 6 caractères.</div>
+  }
+
+  <button type="submit">Submit</button>
+</form>
